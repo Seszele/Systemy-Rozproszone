@@ -29,7 +29,7 @@ namespace ChatServer
                 byte[] buffer = new byte[1024];
                 int bytesRead = client.Receive(buffer);
                 string nickname = Encoding.ASCII.GetString(buffer, 0, bytesRead);
-                Console.WriteLine($"Client {nickname} connected from {((IPEndPoint)client.RemoteEndPoint).Address}");
+                Console.WriteLine($"Client {nickname} connected from {((IPEndPoint?)client.RemoteEndPoint)?.Address}");
 
                 // add the client to the list of connected clients
                 lock (connectedClientsLock)
@@ -81,7 +81,7 @@ namespace ChatServer
                 DisconnectClient(client);
             }
 
-            Console.WriteLine($"Client disconnected from {((IPEndPoint)client.RemoteEndPoint).Address}");
+            Console.WriteLine($"Client disconnected from {((IPEndPoint?)client.RemoteEndPoint)?.Address}");
 
             // remove the client from the list of connected clients
             connectedClients.Remove(client);
@@ -107,7 +107,7 @@ namespace ChatServer
             client.Shutdown(SocketShutdown.Both);
             client.Close();
             connectedClients.Remove(client);
-            Console.WriteLine($"Client {nickname} disconnected from {((IPEndPoint)client.RemoteEndPoint).Address}");
+            Console.WriteLine($"Client {nickname} disconnected from {((IPEndPoint?)client.RemoteEndPoint)?.Address}");
         }
 
         static void SendToAllClients(string message, Socket? excludeClient = null)

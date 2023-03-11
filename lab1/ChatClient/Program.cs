@@ -27,8 +27,8 @@ namespace ChatClient
 
             while (true)
             {
-                string message = Console.ReadLine();
-                byte[] messageBytes = Encoding.ASCII.GetBytes(message);
+                string? message = Console.ReadLine();
+                byte[] messageBytes = Encoding.ASCII.GetBytes(message ?? String.Empty);
                 if (client.Connected)
                 {
                     client.Send(messageBytes);
