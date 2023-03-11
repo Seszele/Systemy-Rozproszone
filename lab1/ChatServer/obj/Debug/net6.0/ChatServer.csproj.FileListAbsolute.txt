@@ -1,0 +1,15 @@
+C:\Programowanie\Rozprochy\Zadania Domowe\lab1\ChatServer\obj\Debug\net6.0\ChatServer.csproj.AssemblyReference.cache
+C:\Programowanie\Rozprochy\Zadania Domowe\lab1\ChatServer\obj\Debug\net6.0\ChatServer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Programowanie\Rozprochy\Zadania Domowe\lab1\ChatServer\obj\Debug\net6.0\ChatServer.AssemblyInfoInputs.cache
+C:\Programowanie\Rozprochy\Zadania Domowe\lab1\ChatServer\obj\Debug\net6.0\ChatServer.AssemblyInfo.cs
+C:\Programowanie\Rozprochy\Zadania Domowe\lab1\ChatServer\obj\Debug\net6.0\ChatServer.csproj.CoreCompileInputs.cache
+C:\Programowanie\Rozprochy\Zadania Domowe\lab1\ChatServer\bin\Debug\net6.0\ChatServer.exe
+C:\Programowanie\Rozprochy\Zadania Domowe\lab1\ChatServer\bin\Debug\net6.0\ChatServer.deps.json
+C:\Programowanie\Rozprochy\Zadania Domowe\lab1\ChatServer\bin\Debug\net6.0\ChatServer.runtimeconfig.json
+C:\Programowanie\Rozprochy\Zadania Domowe\lab1\ChatServer\bin\Debug\net6.0\ChatServer.dll
+C:\Programowanie\Rozprochy\Zadania Domowe\lab1\ChatServer\bin\Debug\net6.0\ChatServer.pdb
+C:\Programowanie\Rozprochy\Zadania Domowe\lab1\ChatServer\obj\Debug\net6.0\ChatServer.dll
+C:\Programowanie\Rozprochy\Zadania Domowe\lab1\ChatServer\obj\Debug\net6.0\refint\ChatServer.dll
+C:\Programowanie\Rozprochy\Zadania Domowe\lab1\ChatServer\obj\Debug\net6.0\ChatServer.pdb
+C:\Programowanie\Rozprochy\Zadania Domowe\lab1\ChatServer\obj\Debug\net6.0\ChatServer.genruntimeconfig.cache
+C:\Programowanie\Rozprochy\Zadania Domowe\lab1\ChatServer\obj\Debug\net6.0\ref\ChatServer.dll
