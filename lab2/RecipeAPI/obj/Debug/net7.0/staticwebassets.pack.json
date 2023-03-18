@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Studia\\Rozprochy\\Systemy-Rozproszone\\lab2\\RecipeAPI\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.RecipeAPI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.RecipeAPI.props",
+      "PackagePath": "build\\RecipeAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.RecipeAPI.props",
+      "PackagePath": "buildMultiTargeting\\RecipeAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.RecipeAPI.props",
+      "PackagePath": "buildTransitive\\RecipeAPI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

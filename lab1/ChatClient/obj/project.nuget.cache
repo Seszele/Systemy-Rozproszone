@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "qI/l0yxzz/eOSjU878l2yEp6NmBQvWx/mr5GhpgQf3SpTo9pdP4OfzoNjZzEJvjBQ0QulkJonlwNkfNgqphKqQ==",
+  "dgSpecHash": "qPFi34LLUOmjg7G4qo3/R2JcyN5ADPK6O0f++zSVAOi2SQfV2MMEev4zh9S47+JIrfmb7q4LeZScGaeeBMOzkQ==",
   "success": true,
-  "projectFilePath": "C:\\Programowanie\\Rozprochy\\Zadania Domowe\\lab1\\ChatClient\\ChatClient.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Studia\\Rozprochy\\Systemy-Rozproszone\\lab1\\ChatClient\\ChatClient.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Sesze\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.14\\microsoft.netcore.app.ref.6.0.14.nupkg.sha512",
+    "C:\\Users\\Sesze\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.14\\microsoft.windowsdesktop.app.ref.6.0.14.nupkg.sha512",
+    "C:\\Users\\Sesze\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.14\\microsoft.aspnetcore.app.ref.6.0.14.nupkg.sha512",
+    "C:\\Users\\Sesze\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.14\\microsoft.netcore.app.host.win-x64.6.0.14.nupkg.sha512"
+  ],
   "logs": []
 }

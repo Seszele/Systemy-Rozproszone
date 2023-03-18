@@ -1,0 +1,27 @@
+@model RecipeAPI.Models.Recipe
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@Model.Title</title>
+</head>
+<body>
+    <h1>@Model.Title</h1>
+    <img src="@Model.ImgUrl" alt="@Model.Title">
+    <p>Ingredients: @string.Join(", ", Model.Ingredients)</p>
+    <p>More about this recipe: <a href="@Model.SourceUrl">@Model.SourceUrl</a></p>
+    @if (Model.NutritionInfo == null)
+    {
+        <p>Nutrition information is not available.</p>
+    }
+    else
+    {
+        <h2>Nutrition Information</h2>
+        <p>Calories: @Model.NutritionInfo.Calories kcal</p>
+        <p>Protein: @Model.NutritionInfo.Protein g</p>
+        <p>Fat: @Model.NutritionInfo.Fat g</p>
+        <p>Carbohydrates: @Model.NutritionInfo.Carbohydrates g</p>
+    }
+</body>
+</html>

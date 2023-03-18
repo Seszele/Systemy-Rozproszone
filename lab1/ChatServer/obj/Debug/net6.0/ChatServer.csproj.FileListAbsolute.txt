@@ -13,3 +13,18 @@ C:\Programowanie\Rozprochy\Zadania Domowe\lab1\ChatServer\obj\Debug\net6.0\refin
 C:\Programowanie\Rozprochy\Zadania Domowe\lab1\ChatServer\obj\Debug\net6.0\ChatServer.pdb
 C:\Programowanie\Rozprochy\Zadania Domowe\lab1\ChatServer\obj\Debug\net6.0\ChatServer.genruntimeconfig.cache
 C:\Programowanie\Rozprochy\Zadania Domowe\lab1\ChatServer\obj\Debug\net6.0\ref\ChatServer.dll
+C:\Studia\Rozprochy\Systemy-Rozproszone\lab1\ChatServer\bin\Debug\net6.0\ChatServer.exe
+C:\Studia\Rozprochy\Systemy-Rozproszone\lab1\ChatServer\bin\Debug\net6.0\ChatServer.deps.json
+C:\Studia\Rozprochy\Systemy-Rozproszone\lab1\ChatServer\bin\Debug\net6.0\ChatServer.runtimeconfig.json
+C:\Studia\Rozprochy\Systemy-Rozproszone\lab1\ChatServer\bin\Debug\net6.0\ChatServer.dll
+C:\Studia\Rozprochy\Systemy-Rozproszone\lab1\ChatServer\bin\Debug\net6.0\ChatServer.pdb
+C:\Studia\Rozprochy\Systemy-Rozproszone\lab1\ChatServer\obj\Debug\net6.0\ChatServer.csproj.AssemblyReference.cache
+C:\Studia\Rozprochy\Systemy-Rozproszone\lab1\ChatServer\obj\Debug\net6.0\ChatServer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Studia\Rozprochy\Systemy-Rozproszone\lab1\ChatServer\obj\Debug\net6.0\ChatServer.AssemblyInfoInputs.cache
+C:\Studia\Rozprochy\Systemy-Rozproszone\lab1\ChatServer\obj\Debug\net6.0\ChatServer.AssemblyInfo.cs
+C:\Studia\Rozprochy\Systemy-Rozproszone\lab1\ChatServer\obj\Debug\net6.0\ChatServer.csproj.CoreCompileInputs.cache
+C:\Studia\Rozprochy\Systemy-Rozproszone\lab1\ChatServer\obj\Debug\net6.0\ChatServer.dll
+C:\Studia\Rozprochy\Systemy-Rozproszone\lab1\ChatServer\obj\Debug\net6.0\refint\ChatServer.dll
+C:\Studia\Rozprochy\Systemy-Rozproszone\lab1\ChatServer\obj\Debug\net6.0\ChatServer.pdb
+C:\Studia\Rozprochy\Systemy-Rozproszone\lab1\ChatServer\obj\Debug\net6.0\ChatServer.genruntimeconfig.cache
+C:\Studia\Rozprochy\Systemy-Rozproszone\lab1\ChatServer\obj\Debug\net6.0\ref\ChatServer.dll

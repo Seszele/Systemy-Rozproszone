@@ -8,24 +8,30 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Wojtek\\.nuget\\packages\\": {}
+    "C:\\Users\\Sesze\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Programowanie\\Rozprochy\\Zadania Domowe\\lab1\\ChatServer\\ChatServer.csproj",
+      "projectUniqueName": "C:\\Studia\\Rozprochy\\Systemy-Rozproszone\\lab1\\ChatServer\\ChatServer.csproj",
       "projectName": "ChatServer",
-      "projectPath": "C:\\Programowanie\\Rozprochy\\Zadania Domowe\\lab1\\ChatServer\\ChatServer.csproj",
-      "packagesPath": "C:\\Users\\Wojtek\\.nuget\\packages\\",
-      "outputPath": "C:\\Programowanie\\Rozprochy\\Zadania Domowe\\lab1\\ChatServer\\obj\\",
+      "projectPath": "C:\\Studia\\Rozprochy\\Systemy-Rozproszone\\lab1\\ChatServer\\ChatServer.csproj",
+      "packagesPath": "C:\\Users\\Sesze\\.nuget\\packages\\",
+      "outputPath": "C:\\Studia\\Rozprochy\\Systemy-Rozproszone\\lab1\\ChatServer\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Wojtek\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Sesze\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -49,16 +55,35 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.14, 6.0.14]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[6.0.14, 6.0.14]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.14, 6.0.14]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[6.0.14, 6.0.14]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

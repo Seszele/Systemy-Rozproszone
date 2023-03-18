@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "EJuUPEuy4zH6Tyl/yScAF28aCGIjlAe5bfpEzsbShYI=",
+  "Source": "RecipeAPI",
+  "BasePath": "_content/RecipeAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "RecipeAPI\\wwwroot",
+      "Source": "RecipeAPI",
+      "ContentRoot": "C:\\Studia\\Rozprochy\\Systemy-Rozproszone\\lab2\\RecipeAPI\\wwwroot\\",
+      "BasePath": "_content/RecipeAPI",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Studia\\Rozprochy\\Systemy-Rozproszone\\lab2\\RecipeAPI\\wwwroot\\index.html",
+      "SourceId": "RecipeAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Studia\\Rozprochy\\Systemy-Rozproszone\\lab2\\RecipeAPI\\wwwroot\\",
+      "BasePath": "_content/RecipeAPI",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    }
+  ]
+}
