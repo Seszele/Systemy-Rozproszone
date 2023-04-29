@@ -1,6 +1,6 @@
 {
-  "SerializedFilePath": "c:\\Studia\\Rozprochy\\Systemy-Rozproszone\\lab2\\RecipeAPI\\obj\\Debug\\net7.0\\project.razor.json",
-  "FilePath": "c:\\Studia\\Rozprochy\\Systemy-Rozproszone\\lab2\\RecipeAPI\\RecipeAPI.csproj",
+  "SerializedFilePath": "c:\\Studia\\Rozprochy\\Systemy-Rozproszone\\lab4\\server\\MyGrpcService\\obj\\Debug\\net7.0\\project.razor.json",
+  "FilePath": "c:\\Studia\\Rozprochy\\Systemy-Rozproszone\\lab4\\server\\MyGrpcService\\MyGrpcService.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "7.0",
@@ -18642,13 +18642,7 @@
     ],
     "CSharpLanguageVersion": 1100
   },
-  "RootNamespace": "RecipeAPI",
-  "Documents": [
-    {
-      "FilePath": "c:\\Studia\\Rozprochy\\Systemy-Rozproszone\\lab2\\RecipeAPI\\Views\\Recipe\\Recipe.cshtml",
-      "TargetPath": "Views\\Recipe\\Recipe.cshtml",
-      "FileKind": "mvc"
-    }
-  ],
+  "RootNamespace": "MyGrpcService",
+  "Documents": [],
   "SerializationFormat": "0.3"
 }
