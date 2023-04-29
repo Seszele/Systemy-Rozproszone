@@ -1,2 +1,5 @@
 /.vscode
-.env
+*.env
+*.txt
+*.zip
+*.pdf
