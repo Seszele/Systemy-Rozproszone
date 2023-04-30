@@ -46,6 +46,14 @@
             "Grpc.AspNetCore": {
               "target": "Package",
               "version": "[2.49.0, )"
+            },
+            "Grpc.AspNetCore.Web": {
+              "target": "Package",
+              "version": "[2.52.0, )"
+            },
+            "SixLabors.ImageSharp": {
+              "target": "Package",
+              "version": "[3.0.1, )"
             }
           },
           "imports": [

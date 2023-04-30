@@ -1,35 +1,54 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useEffect, useMemo, useState } from 'react';
+import grpcTransport from './grpc/transport';
+import './App.css';
+import { DeviceManagerClient, TemperatureSensorClient, CameraClient } from './grpc/server/MyGrpcService/Protos/smarthome.client';
+import { DeviceInfo, ListDevicesRequest } from './grpc/server/MyGrpcService/Protos/smarthome';
+import TemperatureSensor from './components/temperatureSensor/TemperatureSensor';
+import Camera from './components/camera/Camera';
 
-function App() {
-  const [count, setCount] = useState(0)
+
+const GreeterComponent: React.FC = () => {
+  const [devices, setDevices] = useState<DeviceInfo[]>([]);
+
+  const deviceManagerClient = useMemo(() => {
+    return new DeviceManagerClient(grpcTransport);
+  }, [grpcTransport]);
+  const temperatureSensorClient = useMemo(() => {
+    return new TemperatureSensorClient(grpcTransport);
+  }, [grpcTransport]);
+  const cameraClient = useMemo(() => {
+    return new CameraClient(grpcTransport);
+  }, [grpcTransport]);
+
+  useEffect(() => {
+    async function fetchDevices() {
+      const request = ListDevicesRequest.create({});
+      const response = await deviceManagerClient.listDevices(request).response;
+      console.log(response.devices);
+
+      setDevices(response.devices);
+    }
+    
+    fetchDevices();
+  }, [deviceManagerClient]);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1 className='border border-blue-700'>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div >
+      <h1>Intelligent Home</h1>
+      {devices.map((device) => {
+        switch (device.type) {
+          case "TemperatureSensor":
+            return <TemperatureSensor key={device.id} id={device.id} client={temperatureSensorClient} />;
+          case "Camera":
+            console.log("camera");
+            return <Camera key={device.id} id={device.id} client={cameraClient} />;
+          // Add more cases for other device types here
+          default:
+            return <div key={device.id}>Unknown device type: {device.type}</div>;
+        }
+      })}
+    </div>
+  );
+};
 
-export default App
+export default GreeterComponent;

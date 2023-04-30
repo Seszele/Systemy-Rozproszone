@@ -1,0 +1,70 @@
+syntax = "proto3";
+
+package smarthome;
+
+// Base service for all devices
+service DeviceManager {
+  rpc ListDevices (ListDevicesRequest) returns (ListDevicesResponse);
+  rpc GetDeviceStatus (DeviceStatusRequest) returns (DeviceStatusResponse);
+}
+
+message ListDevicesRequest {}
+message ListDevicesResponse {
+  repeated DeviceInfo devices = 1;
+}
+message DeviceInfo {
+  string id = 1;
+  string type = 2;
+}
+message DeviceStatusRequest {
+  string id = 1;
+}
+message DeviceStatusResponse {
+  string id = 1;
+  string status = 2;
+}
+
+// Temperature sensor service
+service TemperatureSensor {
+  rpc GetTemperature (TemperatureRequest) returns (TemperatureResponse);
+}
+message TemperatureRequest {
+  string id = 1;
+}
+message TemperatureResponse {
+  string id = 1;
+  float temperature = 2;
+}
+
+// Camera service
+service Camera {
+  rpc GetImage (ImageRequest) returns (ImageResponse);
+  rpc ControlPTZ (PTZControlRequest) returns (PTZControlResponse);
+}
+
+message ImageRequest {
+  string id = 1;
+}
+
+message ImageResponse {
+  string id = 1;
+  bytes imageData = 2;
+}
+
+message PTZControlRequest {
+  string id = 1;
+  PTZControl control = 2;
+}
+enum PTZControl {
+  PAN_LEFT = 0;
+  PAN_RIGHT = 1;
+  TILT_UP = 2;
+  TILT_DOWN = 3;
+  ZOOM_IN = 4;
+  ZOOM_OUT = 5;
+}
+message PTZControlResponse {
+  string id = 1;
+  bool success = 2;
+}
+// Add more services and messages for other devices here
