@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "ylp2Lip04selbv1NABTmaa/vc0DaWgkMSHDGHT33wtWscFZvactWtkN5vaYZP1fbSQkmeWdWhspDvWvXTr2yTA==",
+  "success": true,
+  "projectFilePath": "C:\\Studia\\Rozprochy\\Systemy-Rozproszone\\lab4\\dynamic-invocation\\server\\server.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Sesze\\.nuget\\packages\\zeroc.ice.net\\3.7.9\\zeroc.ice.net.3.7.9.nupkg.sha512",
+    "C:\\Users\\Sesze\\.nuget\\packages\\zeroc.icebuilder.msbuild\\5.0.9\\zeroc.icebuilder.msbuild.5.0.9.nupkg.sha512"
+  ],
+  "logs": []
+}
