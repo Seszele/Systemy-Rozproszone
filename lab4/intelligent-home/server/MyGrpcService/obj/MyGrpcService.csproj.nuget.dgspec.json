@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Studia\\Rozprochy\\Systemy-Rozproszone\\lab4\\server\\MyGrpcService\\MyGrpcService.csproj": {}
+    "C:\\Studia\\Rozprochy\\Systemy-Rozproszone\\lab4\\intelligent-home\\server\\MyGrpcService\\MyGrpcService.csproj": {}
   },
   "projects": {
-    "C:\\Studia\\Rozprochy\\Systemy-Rozproszone\\lab4\\server\\MyGrpcService\\MyGrpcService.csproj": {
+    "C:\\Studia\\Rozprochy\\Systemy-Rozproszone\\lab4\\intelligent-home\\server\\MyGrpcService\\MyGrpcService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Studia\\Rozprochy\\Systemy-Rozproszone\\lab4\\server\\MyGrpcService\\MyGrpcService.csproj",
+        "projectUniqueName": "C:\\Studia\\Rozprochy\\Systemy-Rozproszone\\lab4\\intelligent-home\\server\\MyGrpcService\\MyGrpcService.csproj",
         "projectName": "MyGrpcService",
-        "projectPath": "C:\\Studia\\Rozprochy\\Systemy-Rozproszone\\lab4\\server\\MyGrpcService\\MyGrpcService.csproj",
+        "projectPath": "C:\\Studia\\Rozprochy\\Systemy-Rozproszone\\lab4\\intelligent-home\\server\\MyGrpcService\\MyGrpcService.csproj",
         "packagesPath": "C:\\Users\\Sesze\\.nuget\\packages\\",
-        "outputPath": "C:\\Studia\\Rozprochy\\Systemy-Rozproszone\\lab4\\server\\MyGrpcService\\obj\\",
+        "outputPath": "C:\\Studia\\Rozprochy\\Systemy-Rozproszone\\lab4\\intelligent-home\\server\\MyGrpcService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

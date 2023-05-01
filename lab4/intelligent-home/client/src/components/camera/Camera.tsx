@@ -4,6 +4,10 @@ import { ImageRequest, PTZControl, PTZControlRequest } from '../../grpc/server/M
 import { Buffer } from 'buffer';
 import ZoomInIcon from '@mui/icons-material/ZoomIn';
 import ZoomOutIcon from '@mui/icons-material/ZoomOut';
+import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 interface CameraProps {
   id: string;
@@ -49,25 +53,25 @@ const Camera: React.FC<CameraProps> = ({ id, client }) => {
           onClick={() => controlPTZ(PTZControl.PAN_LEFT)}
           className="bg-blue-500 text-white px-4 py-2 rounded-md"
         >
-          Pan Left
+          <ArrowLeftIcon></ArrowLeftIcon>
         </button>
         <button
           onClick={() => controlPTZ(PTZControl.PAN_RIGHT)}
           className="bg-blue-500 text-white px-4 py-2 rounded-md"
         >
-          Pan Right
+          <ArrowRightIcon></ArrowRightIcon>
         </button>
         <button
           onClick={() => controlPTZ(PTZControl.TILT_UP)}
           className="bg-blue-500 text-white px-4 py-2 rounded-md"
         >
-          Tilt Up
+          <KeyboardArrowDownIcon></KeyboardArrowDownIcon>
         </button>
         <button
           onClick={() => controlPTZ(PTZControl.TILT_DOWN)}
           className="bg-blue-500 text-white px-4 py-2 rounded-md"
         >
-          Tilt Down
+          <KeyboardArrowUpIcon></KeyboardArrowUpIcon>
         </button>
         <button
           onClick={() => controlPTZ(PTZControl.ZOOM_IN)}

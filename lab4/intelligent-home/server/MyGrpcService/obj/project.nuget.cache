@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "p/Po38jCZEJENC1dK4XxkTmUhCiZZz9GJZNRpYs0qggyxoY6BchImROlniAQ7JfBehl6TicpNWSeHJjNxQaj4Q==",
+  "dgSpecHash": "vtNQZrao/gQbQhWUtG3+g9e2RHpAOke48Z9TAzKFQwTbOqUIDvwQAKfVdHR3FcDKu20BJSVgVkE+8y+gCvoOZg==",
   "success": true,
-  "projectFilePath": "C:\\Studia\\Rozprochy\\Systemy-Rozproszone\\lab4\\server\\MyGrpcService\\MyGrpcService.csproj",
+  "projectFilePath": "C:\\Studia\\Rozprochy\\Systemy-Rozproszone\\lab4\\intelligent-home\\server\\MyGrpcService\\MyGrpcService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Sesze\\.nuget\\packages\\google.protobuf\\3.21.5\\google.protobuf.3.21.5.nupkg.sha512",
     "C:\\Users\\Sesze\\.nuget\\packages\\grpc.aspnetcore\\2.49.0\\grpc.aspnetcore.2.49.0.nupkg.sha512",
