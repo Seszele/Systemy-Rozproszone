@@ -108,6 +108,7 @@ message SpeakerSubtype {
 }
 
 message BasicSpeaker {}
+
 message BluetoothSpeaker {
   string bluetoothAddress = 1;
 }

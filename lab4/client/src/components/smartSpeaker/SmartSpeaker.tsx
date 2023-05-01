@@ -5,7 +5,7 @@ import PauseIcon from '@mui/icons-material/Pause';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import BluetoothIcon from '@mui/icons-material/Bluetooth';
 import SpeakerIcon from '@mui/icons-material/Speaker';
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 
 interface SmartSpeakerProps {
     id: string;
@@ -50,13 +50,13 @@ const SmartSpeaker: React.FC<SmartSpeakerProps> = ({ id, client, speakerSubtype 
     };
 
     return (
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center border-t-4 border-indigo-500 pt-3">
             {speakerSubtype.subtype.oneofKind === "bluetooth"
                 ? <button onClick={() => toast("Current bluetooth adress\n" + speakerSubtype.subtype.bluetooth.bluetoothAddress)}>
                     <BluetoothIcon></BluetoothIcon>
                 </button>
                 : <SpeakerIcon></SpeakerIcon>}
-            <h2>Smart Speaker: {id} {speakerSubtype.subtype.oneofKind}</h2>
+            <h2>Smart Speaker: {id}</h2>
             <div>
                 <label htmlFor={`volume-${id}`}>Volume: </label>
                 <input

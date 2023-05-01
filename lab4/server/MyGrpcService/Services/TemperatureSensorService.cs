@@ -10,7 +10,8 @@ public class TemperatureSensorService : TemperatureSensor.TemperatureSensorBase
     private static Dictionary<string, float> _sensors = new Dictionary<string, float>
         {
             { "1", 22.5f },
-            { "2", 24.3f }
+            { "2", 24.3f },
+            { "6", 24.3f },
         };
     public TemperatureSensorService(ILogger<TemperatureSensorService> logger)
     {
@@ -20,6 +21,7 @@ public class TemperatureSensorService : TemperatureSensor.TemperatureSensorBase
     {
         _sensors["1"] += Random.Shared.Next(-1, 2) * (Random.Shared.NextSingle());
         _sensors["2"] += Random.Shared.Next(-1, 2) * (Random.Shared.NextSingle());
+        _sensors["6"] += Random.Shared.Next(-1, 2) * (Random.Shared.NextSingle());
         if (_sensors.TryGetValue(request.Id, out float temperature))
         {
             return Task.FromResult(new TemperatureResponse { Temperature = temperature });

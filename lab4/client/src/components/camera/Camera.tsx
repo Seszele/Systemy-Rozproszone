@@ -1,4 +1,3 @@
-// components/camera/Camera.tsx
 import React, { useEffect, useState } from 'react';
 import { CameraClient } from '../../grpc/server/MyGrpcService/Protos/smarthome.client';
 import { ImageRequest, PTZControl, PTZControlRequest } from '../../grpc/server/MyGrpcService/Protos/smarthome';
@@ -15,14 +14,14 @@ const Camera: React.FC<CameraProps> = ({ id, client }) => {
   const [imageData, setImageData] = useState<Uint8Array | null>(null);
 
   useEffect(() => {
-    
+
     fetchImage();
   }, [id, client]);
 
   async function fetchImage() {
     const request = ImageRequest.create({ id });
     const response = await client.getImage(request).response;
-    
+
     setImageData(response.imageData);
   }
   async function controlPTZ(control: PTZControl) {
@@ -42,7 +41,7 @@ const Camera: React.FC<CameraProps> = ({ id, client }) => {
         />
       ) : (
         <div className="w-full h-48 bg-gray-200 rounded-md flex items-center justify-center">
-          <span>Loading image...</span>
+          <span className='text-black'>Loading image...</span>
         </div>
       )}
       <div className="flex justify-between mt-4">
@@ -59,7 +58,7 @@ const Camera: React.FC<CameraProps> = ({ id, client }) => {
           Pan Right
         </button>
         <button
-          onClick={() => controlPTZ(PTZControl.TILT_DOWN)}
+          onClick={() => controlPTZ(PTZControl.TILT_UP)}
           className="bg-blue-500 text-white px-4 py-2 rounded-md"
         >
           Tilt Up
@@ -72,7 +71,7 @@ const Camera: React.FC<CameraProps> = ({ id, client }) => {
         </button>
         <button
           onClick={() => controlPTZ(PTZControl.ZOOM_IN)}
-          className="bg-blue-500 text-white px-4 py-2 rounded-md"
+          className="bg-blue-500 text-white px-4 py-2 rounded-md disabled"
         >
           <ZoomInIcon></ZoomInIcon>
         </button>

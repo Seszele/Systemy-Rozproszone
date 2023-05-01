@@ -48,7 +48,7 @@ const GreeterComponent: React.FC = () => {
               return <TemperatureSensor key={device.id} id={device.id} client={temperatureSensorClient} />;
             case "Camera":
               return <Camera key={device.id} id={device.id} client={cameraClient} />;
-            case "SmartSpeaker": // Add a new case for SmartSpeaker
+            case "SmartSpeaker":
               return <SmartSpeaker key={device.id} id={device.id} client={smartSpeakerClient} speakerSubtype={device.speakerSubtype!} />;
             default:
               return <div key={device.id}>Unknown device type: {device.type}</div>;

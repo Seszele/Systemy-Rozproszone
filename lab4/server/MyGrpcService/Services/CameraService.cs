@@ -23,7 +23,6 @@ public class CameraService : Camera.CameraBase
             {
                 { "1", new CameraState() },
                 { "2", new CameraState() },
-                // Add more cameras here if needed
             };
     }
 
