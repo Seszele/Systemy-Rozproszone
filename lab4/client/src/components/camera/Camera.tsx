@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { CameraClient } from '../../grpc/server/MyGrpcService/Protos/smarthome.client';
 import { ImageRequest, PTZControl, PTZControlRequest } from '../../grpc/server/MyGrpcService/Protos/smarthome';
 import { Buffer } from 'buffer';
+import ZoomInIcon from '@mui/icons-material/ZoomIn';
+import ZoomOutIcon from '@mui/icons-material/ZoomOut';
 
 interface CameraProps {
   id: string;
@@ -72,13 +74,13 @@ const Camera: React.FC<CameraProps> = ({ id, client }) => {
           onClick={() => controlPTZ(PTZControl.ZOOM_IN)}
           className="bg-blue-500 text-white px-4 py-2 rounded-md"
         >
-          Zoom In
+          <ZoomInIcon></ZoomInIcon>
         </button>
         <button
           onClick={() => controlPTZ(PTZControl.ZOOM_OUT)}
           className="bg-blue-500 text-white px-4 py-2 rounded-md"
         >
-          Zoom Out
+          <ZoomOutIcon></ZoomOutIcon>
         </button>
       </div>
     </div>

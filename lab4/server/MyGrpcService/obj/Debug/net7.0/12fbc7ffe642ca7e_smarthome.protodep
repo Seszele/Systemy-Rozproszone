@@ -1,2 +1,3 @@
 obj\Debug\net7.0\Protos/Smarthome.cs \
-obj\Debug\net7.0\Protos/SmarthomeGrpc.cs: Protos/smarthome.proto
+obj\Debug\net7.0\Protos/SmarthomeGrpc.cs: C:/Users/Sesze/.nuget/packages/grpc.tools/2.49.0/build/native/include/google/protobuf/empty.proto\
+ Protos/smarthome.proto

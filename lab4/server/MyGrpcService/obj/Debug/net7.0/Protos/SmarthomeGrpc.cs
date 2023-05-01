@@ -321,5 +321,166 @@ namespace Smarthome {
     }
 
   }
+  /// <summary>
+  /// Smart speaker service
+  /// </summary>
+  public static partial class SmartSpeaker
+  {
+    static readonly string __ServiceName = "smarthome.SmartSpeaker";
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static void __Helper_SerializeMessage(global::Google.Protobuf.IMessage message, grpc::SerializationContext context)
+    {
+      #if !GRPC_DISABLE_PROTOBUF_BUFFER_SERIALIZATION
+      if (message is global::Google.Protobuf.IBufferMessage)
+      {
+        context.SetPayloadLength(message.CalculateSize());
+        global::Google.Protobuf.MessageExtensions.WriteTo(message, context.GetBufferWriter());
+        context.Complete();
+        return;
+      }
+      #endif
+      context.Complete(global::Google.Protobuf.MessageExtensions.ToByteArray(message));
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static class __Helper_MessageCache<T>
+    {
+      public static readonly bool IsBufferMessage = global::System.Reflection.IntrospectionExtensions.GetTypeInfo(typeof(global::Google.Protobuf.IBufferMessage)).IsAssignableFrom(typeof(T));
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static T __Helper_DeserializeMessage<T>(grpc::DeserializationContext context, global::Google.Protobuf.MessageParser<T> parser) where T : global::Google.Protobuf.IMessage<T>
+    {
+      #if !GRPC_DISABLE_PROTOBUF_BUFFER_SERIALIZATION
+      if (__Helper_MessageCache<T>.IsBufferMessage)
+      {
+        return parser.ParseFrom(context.PayloadAsReadOnlySequence());
+      }
+      #endif
+      return parser.ParseFrom(context.PayloadAsNewBuffer());
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Smarthome.SpeakerRequest> __Marshaller_smarthome_SpeakerRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Smarthome.SpeakerRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Smarthome.SpeakerVolumeResponse> __Marshaller_smarthome_SpeakerVolumeResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Smarthome.SpeakerVolumeResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Smarthome.SpeakerVolumeRequest> __Marshaller_smarthome_SpeakerVolumeRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Smarthome.SpeakerVolumeRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Google.Protobuf.WellKnownTypes.Empty> __Marshaller_google_protobuf_Empty = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Protobuf.WellKnownTypes.Empty.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Smarthome.AudioStatusResponse> __Marshaller_smarthome_AudioStatusResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Smarthome.AudioStatusResponse.Parser));
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Smarthome.SpeakerRequest, global::Smarthome.SpeakerVolumeResponse> __Method_GetVolume = new grpc::Method<global::Smarthome.SpeakerRequest, global::Smarthome.SpeakerVolumeResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetVolume",
+        __Marshaller_smarthome_SpeakerRequest,
+        __Marshaller_smarthome_SpeakerVolumeResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Smarthome.SpeakerVolumeRequest, global::Google.Protobuf.WellKnownTypes.Empty> __Method_SetVolume = new grpc::Method<global::Smarthome.SpeakerVolumeRequest, global::Google.Protobuf.WellKnownTypes.Empty>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "SetVolume",
+        __Marshaller_smarthome_SpeakerVolumeRequest,
+        __Marshaller_google_protobuf_Empty);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Smarthome.SpeakerRequest, global::Google.Protobuf.WellKnownTypes.Empty> __Method_PlayAudio = new grpc::Method<global::Smarthome.SpeakerRequest, global::Google.Protobuf.WellKnownTypes.Empty>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "PlayAudio",
+        __Marshaller_smarthome_SpeakerRequest,
+        __Marshaller_google_protobuf_Empty);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Smarthome.SpeakerRequest, global::Google.Protobuf.WellKnownTypes.Empty> __Method_PauseAudio = new grpc::Method<global::Smarthome.SpeakerRequest, global::Google.Protobuf.WellKnownTypes.Empty>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "PauseAudio",
+        __Marshaller_smarthome_SpeakerRequest,
+        __Marshaller_google_protobuf_Empty);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Smarthome.SpeakerRequest, global::Smarthome.AudioStatusResponse> __Method_GetAudioStatus = new grpc::Method<global::Smarthome.SpeakerRequest, global::Smarthome.AudioStatusResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetAudioStatus",
+        __Marshaller_smarthome_SpeakerRequest,
+        __Marshaller_smarthome_AudioStatusResponse);
+
+    /// <summary>Service descriptor</summary>
+    public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
+    {
+      get { return global::Smarthome.SmarthomeReflection.Descriptor.Services[3]; }
+    }
+
+    /// <summary>Base class for server-side implementations of SmartSpeaker</summary>
+    [grpc::BindServiceMethod(typeof(SmartSpeaker), "BindService")]
+    public abstract partial class SmartSpeakerBase
+    {
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::Smarthome.SpeakerVolumeResponse> GetVolume(global::Smarthome.SpeakerRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::Google.Protobuf.WellKnownTypes.Empty> SetVolume(global::Smarthome.SpeakerVolumeRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::Google.Protobuf.WellKnownTypes.Empty> PlayAudio(global::Smarthome.SpeakerRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::Google.Protobuf.WellKnownTypes.Empty> PauseAudio(global::Smarthome.SpeakerRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::Smarthome.AudioStatusResponse> GetAudioStatus(global::Smarthome.SpeakerRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+    }
+
+    /// <summary>Creates service definition that can be registered with a server</summary>
+    /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public static grpc::ServerServiceDefinition BindService(SmartSpeakerBase serviceImpl)
+    {
+      return grpc::ServerServiceDefinition.CreateBuilder()
+          .AddMethod(__Method_GetVolume, serviceImpl.GetVolume)
+          .AddMethod(__Method_SetVolume, serviceImpl.SetVolume)
+          .AddMethod(__Method_PlayAudio, serviceImpl.PlayAudio)
+          .AddMethod(__Method_PauseAudio, serviceImpl.PauseAudio)
+          .AddMethod(__Method_GetAudioStatus, serviceImpl.GetAudioStatus).Build();
+    }
+
+    /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
+    /// Note: this method is part of an experimental API that can change or be removed without any prior notice.</summary>
+    /// <param name="serviceBinder">Service methods will be bound by calling <c>AddMethod</c> on this object.</param>
+    /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public static void BindService(grpc::ServiceBinderBase serviceBinder, SmartSpeakerBase serviceImpl)
+    {
+      serviceBinder.AddMethod(__Method_GetVolume, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Smarthome.SpeakerRequest, global::Smarthome.SpeakerVolumeResponse>(serviceImpl.GetVolume));
+      serviceBinder.AddMethod(__Method_SetVolume, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Smarthome.SpeakerVolumeRequest, global::Google.Protobuf.WellKnownTypes.Empty>(serviceImpl.SetVolume));
+      serviceBinder.AddMethod(__Method_PlayAudio, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Smarthome.SpeakerRequest, global::Google.Protobuf.WellKnownTypes.Empty>(serviceImpl.PlayAudio));
+      serviceBinder.AddMethod(__Method_PauseAudio, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Smarthome.SpeakerRequest, global::Google.Protobuf.WellKnownTypes.Empty>(serviceImpl.PauseAudio));
+      serviceBinder.AddMethod(__Method_GetAudioStatus, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Smarthome.SpeakerRequest, global::Smarthome.AudioStatusResponse>(serviceImpl.GetAudioStatus));
+    }
+
+  }
 }
 #endregion

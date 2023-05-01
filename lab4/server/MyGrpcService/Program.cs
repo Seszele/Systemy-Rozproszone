@@ -27,6 +27,7 @@ app.MapGrpcService<GreeterService>();
 app.MapGrpcService<TemperatureSensorService>();
 app.MapGrpcService<DeviceManagerService>();
 app.MapGrpcService<CameraService>();
+app.MapGrpcService<SmartSpeakerService>();
 app.MapGet("/", () => "Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909");
 
 // cors

@@ -1,4 +1,3 @@
-// Smarthome/Services/CameraService.cs
 using System;
 using System.Collections.Generic;
 using System.IO;

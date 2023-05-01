@@ -1,5 +1,5 @@
 syntax = "proto3";
-
+import "google/protobuf/empty.proto";
 package smarthome;
 
 // Base service for all devices
@@ -15,6 +15,7 @@ message ListDevicesResponse {
 message DeviceInfo {
   string id = 1;
   string type = 2;
+  SpeakerSubtype speakerSubtype = 3;
 }
 message DeviceStatusRequest {
   string id = 1;
@@ -67,4 +68,49 @@ message PTZControlResponse {
   string id = 1;
   bool success = 2;
 }
-// Add more services and messages for other devices here
+
+// Smart speaker service
+service SmartSpeaker {
+  rpc GetVolume (SpeakerRequest) returns (SpeakerVolumeResponse);
+  rpc SetVolume (SpeakerVolumeRequest) returns (google.protobuf.Empty);
+
+  rpc PlayAudio (SpeakerRequest) returns (google.protobuf.Empty);
+  rpc PauseAudio (SpeakerRequest) returns (google.protobuf.Empty);
+  rpc GetAudioStatus (SpeakerRequest) returns (AudioStatusResponse);
+}
+
+message SpeakerRequest {
+  string id = 1;
+}
+
+message SpeakerVolumeResponse {
+  string id = 1;
+  int32 volume = 2;
+}
+
+message SpeakerVolumeRequest {
+  string id = 1;
+  int32 volume = 2;
+}
+
+message AudioStatusResponse {
+  string id = 1;
+  bool playing = 2;
+}
+
+// Smart speaker subtypes
+message SpeakerSubtype {
+  oneof subtype {
+    BasicSpeaker basic = 1;
+    BluetoothSpeaker bluetooth = 2;
+    WiFiSpeaker wifi = 3;
+  }
+}
+
+message BasicSpeaker {}
+message BluetoothSpeaker {
+  string bluetoothAddress = 1;
+}
+message WiFiSpeaker {
+  string ipAddress = 1;
+}

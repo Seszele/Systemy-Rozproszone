@@ -24,36 +24,56 @@ namespace Smarthome {
     static SmarthomeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZQcm90b3Mvc21hcnRob21lLnByb3RvEglzbWFydGhvbWUiFAoSTGlzdERl",
-            "dmljZXNSZXF1ZXN0Ij0KE0xpc3REZXZpY2VzUmVzcG9uc2USJgoHZGV2aWNl",
-            "cxgBIAMoCzIVLnNtYXJ0aG9tZS5EZXZpY2VJbmZvIiYKCkRldmljZUluZm8S",
-            "CgoCaWQYASABKAkSDAoEdHlwZRgCIAEoCSIhChNEZXZpY2VTdGF0dXNSZXF1",
-            "ZXN0EgoKAmlkGAEgASgJIjIKFERldmljZVN0YXR1c1Jlc3BvbnNlEgoKAmlk",
-            "GAEgASgJEg4KBnN0YXR1cxgCIAEoCSIgChJUZW1wZXJhdHVyZVJlcXVlc3QS",
-            "CgoCaWQYASABKAkiNgoTVGVtcGVyYXR1cmVSZXNwb25zZRIKCgJpZBgBIAEo",
-            "CRITCgt0ZW1wZXJhdHVyZRgCIAEoAiIaCgxJbWFnZVJlcXVlc3QSCgoCaWQY",
-            "ASABKAkiLgoNSW1hZ2VSZXNwb25zZRIKCgJpZBgBIAEoCRIRCglpbWFnZURh",
-            "dGEYAiABKAwiRwoRUFRaQ29udHJvbFJlcXVlc3QSCgoCaWQYASABKAkSJgoH",
-            "Y29udHJvbBgCIAEoDjIVLnNtYXJ0aG9tZS5QVFpDb250cm9sIjEKElBUWkNv",
-            "bnRyb2xSZXNwb25zZRIKCgJpZBgBIAEoCRIPCgdzdWNjZXNzGAIgASgIKmAK",
-            "ClBUWkNvbnRyb2wSDAoIUEFOX0xFRlQQABINCglQQU5fUklHSFQQARILCgdU",
-            "SUxUX1VQEAISDQoJVElMVF9ET1dOEAMSCwoHWk9PTV9JThAEEgwKCFpPT01f",
-            "T1VUEAUysQEKDURldmljZU1hbmFnZXISTAoLTGlzdERldmljZXMSHS5zbWFy",
-            "dGhvbWUuTGlzdERldmljZXNSZXF1ZXN0Gh4uc21hcnRob21lLkxpc3REZXZp",
-            "Y2VzUmVzcG9uc2USUgoPR2V0RGV2aWNlU3RhdHVzEh4uc21hcnRob21lLkRl",
-            "dmljZVN0YXR1c1JlcXVlc3QaHy5zbWFydGhvbWUuRGV2aWNlU3RhdHVzUmVz",
-            "cG9uc2UyZAoRVGVtcGVyYXR1cmVTZW5zb3ISTwoOR2V0VGVtcGVyYXR1cmUS",
-            "HS5zbWFydGhvbWUuVGVtcGVyYXR1cmVSZXF1ZXN0Gh4uc21hcnRob21lLlRl",
-            "bXBlcmF0dXJlUmVzcG9uc2UykgEKBkNhbWVyYRI9CghHZXRJbWFnZRIXLnNt",
-            "YXJ0aG9tZS5JbWFnZVJlcXVlc3QaGC5zbWFydGhvbWUuSW1hZ2VSZXNwb25z",
-            "ZRJJCgpDb250cm9sUFRaEhwuc21hcnRob21lLlBUWkNvbnRyb2xSZXF1ZXN0",
-            "Gh0uc21hcnRob21lLlBUWkNvbnRyb2xSZXNwb25zZWIGcHJvdG8z"));
+            "ChZQcm90b3Mvc21hcnRob21lLnByb3RvEglzbWFydGhvbWUaG2dvb2dsZS9w",
+            "cm90b2J1Zi9lbXB0eS5wcm90byIUChJMaXN0RGV2aWNlc1JlcXVlc3QiPQoT",
+            "TGlzdERldmljZXNSZXNwb25zZRImCgdkZXZpY2VzGAEgAygLMhUuc21hcnRo",
+            "b21lLkRldmljZUluZm8iWQoKRGV2aWNlSW5mbxIKCgJpZBgBIAEoCRIMCgR0",
+            "eXBlGAIgASgJEjEKDnNwZWFrZXJTdWJ0eXBlGAMgASgLMhkuc21hcnRob21l",
+            "LlNwZWFrZXJTdWJ0eXBlIiEKE0RldmljZVN0YXR1c1JlcXVlc3QSCgoCaWQY",
+            "ASABKAkiMgoURGV2aWNlU3RhdHVzUmVzcG9uc2USCgoCaWQYASABKAkSDgoG",
+            "c3RhdHVzGAIgASgJIiAKElRlbXBlcmF0dXJlUmVxdWVzdBIKCgJpZBgBIAEo",
+            "CSI2ChNUZW1wZXJhdHVyZVJlc3BvbnNlEgoKAmlkGAEgASgJEhMKC3RlbXBl",
+            "cmF0dXJlGAIgASgCIhoKDEltYWdlUmVxdWVzdBIKCgJpZBgBIAEoCSIuCg1J",
+            "bWFnZVJlc3BvbnNlEgoKAmlkGAEgASgJEhEKCWltYWdlRGF0YRgCIAEoDCJH",
+            "ChFQVFpDb250cm9sUmVxdWVzdBIKCgJpZBgBIAEoCRImCgdjb250cm9sGAIg",
+            "ASgOMhUuc21hcnRob21lLlBUWkNvbnRyb2wiMQoSUFRaQ29udHJvbFJlc3Bv",
+            "bnNlEgoKAmlkGAEgASgJEg8KB3N1Y2Nlc3MYAiABKAgiHAoOU3BlYWtlclJl",
+            "cXVlc3QSCgoCaWQYASABKAkiMwoVU3BlYWtlclZvbHVtZVJlc3BvbnNlEgoK",
+            "AmlkGAEgASgJEg4KBnZvbHVtZRgCIAEoBSIyChRTcGVha2VyVm9sdW1lUmVx",
+            "dWVzdBIKCgJpZBgBIAEoCRIOCgZ2b2x1bWUYAiABKAUiMgoTQXVkaW9TdGF0",
+            "dXNSZXNwb25zZRIKCgJpZBgBIAEoCRIPCgdwbGF5aW5nGAIgASgIIp8BCg5T",
+            "cGVha2VyU3VidHlwZRIoCgViYXNpYxgBIAEoCzIXLnNtYXJ0aG9tZS5CYXNp",
+            "Y1NwZWFrZXJIABIwCglibHVldG9vdGgYAiABKAsyGy5zbWFydGhvbWUuQmx1",
+            "ZXRvb3RoU3BlYWtlckgAEiYKBHdpZmkYAyABKAsyFi5zbWFydGhvbWUuV2lG",
+            "aVNwZWFrZXJIAEIJCgdzdWJ0eXBlIg4KDEJhc2ljU3BlYWtlciIsChBCbHVl",
+            "dG9vdGhTcGVha2VyEhgKEGJsdWV0b290aEFkZHJlc3MYASABKAkiIAoLV2lG",
+            "aVNwZWFrZXISEQoJaXBBZGRyZXNzGAEgASgJKmAKClBUWkNvbnRyb2wSDAoI",
+            "UEFOX0xFRlQQABINCglQQU5fUklHSFQQARILCgdUSUxUX1VQEAISDQoJVElM",
+            "VF9ET1dOEAMSCwoHWk9PTV9JThAEEgwKCFpPT01fT1VUEAUysQEKDURldmlj",
+            "ZU1hbmFnZXISTAoLTGlzdERldmljZXMSHS5zbWFydGhvbWUuTGlzdERldmlj",
+            "ZXNSZXF1ZXN0Gh4uc21hcnRob21lLkxpc3REZXZpY2VzUmVzcG9uc2USUgoP",
+            "R2V0RGV2aWNlU3RhdHVzEh4uc21hcnRob21lLkRldmljZVN0YXR1c1JlcXVl",
+            "c3QaHy5zbWFydGhvbWUuRGV2aWNlU3RhdHVzUmVzcG9uc2UyZAoRVGVtcGVy",
+            "YXR1cmVTZW5zb3ISTwoOR2V0VGVtcGVyYXR1cmUSHS5zbWFydGhvbWUuVGVt",
+            "cGVyYXR1cmVSZXF1ZXN0Gh4uc21hcnRob21lLlRlbXBlcmF0dXJlUmVzcG9u",
+            "c2UykgEKBkNhbWVyYRI9CghHZXRJbWFnZRIXLnNtYXJ0aG9tZS5JbWFnZVJl",
+            "cXVlc3QaGC5zbWFydGhvbWUuSW1hZ2VSZXNwb25zZRJJCgpDb250cm9sUFRa",
+            "Ehwuc21hcnRob21lLlBUWkNvbnRyb2xSZXF1ZXN0Gh0uc21hcnRob21lLlBU",
+            "WkNvbnRyb2xSZXNwb25zZTLsAgoMU21hcnRTcGVha2VyEkgKCUdldFZvbHVt",
+            "ZRIZLnNtYXJ0aG9tZS5TcGVha2VyUmVxdWVzdBogLnNtYXJ0aG9tZS5TcGVh",
+            "a2VyVm9sdW1lUmVzcG9uc2USRAoJU2V0Vm9sdW1lEh8uc21hcnRob21lLlNw",
+            "ZWFrZXJWb2x1bWVSZXF1ZXN0GhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5Ej4K",
+            "CVBsYXlBdWRpbxIZLnNtYXJ0aG9tZS5TcGVha2VyUmVxdWVzdBoWLmdvb2ds",
+            "ZS5wcm90b2J1Zi5FbXB0eRI/CgpQYXVzZUF1ZGlvEhkuc21hcnRob21lLlNw",
+            "ZWFrZXJSZXF1ZXN0GhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5EksKDkdldEF1",
+            "ZGlvU3RhdHVzEhkuc21hcnRob21lLlNwZWFrZXJSZXF1ZXN0Gh4uc21hcnRo",
+            "b21lLkF1ZGlvU3RhdHVzUmVzcG9uc2ViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Smarthome.PTZControl), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Smarthome.ListDevicesRequest), global::Smarthome.ListDevicesRequest.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Smarthome.ListDevicesResponse), global::Smarthome.ListDevicesResponse.Parser, new[]{ "Devices" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Smarthome.DeviceInfo), global::Smarthome.DeviceInfo.Parser, new[]{ "Id", "Type" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Smarthome.DeviceInfo), global::Smarthome.DeviceInfo.Parser, new[]{ "Id", "Type", "SpeakerSubtype" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Smarthome.DeviceStatusRequest), global::Smarthome.DeviceStatusRequest.Parser, new[]{ "Id" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Smarthome.DeviceStatusResponse), global::Smarthome.DeviceStatusResponse.Parser, new[]{ "Id", "Status" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Smarthome.TemperatureRequest), global::Smarthome.TemperatureRequest.Parser, new[]{ "Id" }, null, null, null, null),
@@ -61,7 +81,15 @@ namespace Smarthome {
             new pbr::GeneratedClrTypeInfo(typeof(global::Smarthome.ImageRequest), global::Smarthome.ImageRequest.Parser, new[]{ "Id" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Smarthome.ImageResponse), global::Smarthome.ImageResponse.Parser, new[]{ "Id", "ImageData" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Smarthome.PTZControlRequest), global::Smarthome.PTZControlRequest.Parser, new[]{ "Id", "Control" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Smarthome.PTZControlResponse), global::Smarthome.PTZControlResponse.Parser, new[]{ "Id", "Success" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Smarthome.PTZControlResponse), global::Smarthome.PTZControlResponse.Parser, new[]{ "Id", "Success" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Smarthome.SpeakerRequest), global::Smarthome.SpeakerRequest.Parser, new[]{ "Id" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Smarthome.SpeakerVolumeResponse), global::Smarthome.SpeakerVolumeResponse.Parser, new[]{ "Id", "Volume" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Smarthome.SpeakerVolumeRequest), global::Smarthome.SpeakerVolumeRequest.Parser, new[]{ "Id", "Volume" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Smarthome.AudioStatusResponse), global::Smarthome.AudioStatusResponse.Parser, new[]{ "Id", "Playing" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Smarthome.SpeakerSubtype), global::Smarthome.SpeakerSubtype.Parser, new[]{ "Basic", "Bluetooth", "Wifi" }, new[]{ "Subtype" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Smarthome.BasicSpeaker), global::Smarthome.BasicSpeaker.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Smarthome.BluetoothSpeaker), global::Smarthome.BluetoothSpeaker.Parser, new[]{ "BluetoothAddress" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Smarthome.WiFiSpeaker), global::Smarthome.WiFiSpeaker.Parser, new[]{ "IpAddress" }, null, null, null, null)
           }));
     }
     #endregion
@@ -446,6 +474,7 @@ namespace Smarthome {
     public DeviceInfo(DeviceInfo other) : this() {
       id_ = other.id_;
       type_ = other.type_;
+      speakerSubtype_ = other.speakerSubtype_ != null ? other.speakerSubtype_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -479,6 +508,18 @@ namespace Smarthome {
       }
     }
 
+    /// <summary>Field number for the "speakerSubtype" field.</summary>
+    public const int SpeakerSubtypeFieldNumber = 3;
+    private global::Smarthome.SpeakerSubtype speakerSubtype_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Smarthome.SpeakerSubtype SpeakerSubtype {
+      get { return speakerSubtype_; }
+      set {
+        speakerSubtype_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -496,6 +537,7 @@ namespace Smarthome {
       }
       if (Id != other.Id) return false;
       if (Type != other.Type) return false;
+      if (!object.Equals(SpeakerSubtype, other.SpeakerSubtype)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -505,6 +547,7 @@ namespace Smarthome {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (Type.Length != 0) hash ^= Type.GetHashCode();
+      if (speakerSubtype_ != null) hash ^= SpeakerSubtype.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -531,6 +574,10 @@ namespace Smarthome {
         output.WriteRawTag(18);
         output.WriteString(Type);
       }
+      if (speakerSubtype_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(SpeakerSubtype);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -549,6 +596,10 @@ namespace Smarthome {
         output.WriteRawTag(18);
         output.WriteString(Type);
       }
+      if (speakerSubtype_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(SpeakerSubtype);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -564,6 +615,9 @@ namespace Smarthome {
       }
       if (Type.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Type);
+      }
+      if (speakerSubtype_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SpeakerSubtype);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -582,6 +636,12 @@ namespace Smarthome {
       }
       if (other.Type.Length != 0) {
         Type = other.Type;
+      }
+      if (other.speakerSubtype_ != null) {
+        if (speakerSubtype_ == null) {
+          SpeakerSubtype = new global::Smarthome.SpeakerSubtype();
+        }
+        SpeakerSubtype.MergeFrom(other.SpeakerSubtype);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -606,6 +666,13 @@ namespace Smarthome {
             Type = input.ReadString();
             break;
           }
+          case 26: {
+            if (speakerSubtype_ == null) {
+              SpeakerSubtype = new global::Smarthome.SpeakerSubtype();
+            }
+            input.ReadMessage(SpeakerSubtype);
+            break;
+          }
         }
       }
     #endif
@@ -627,6 +694,13 @@ namespace Smarthome {
           }
           case 18: {
             Type = input.ReadString();
+            break;
+          }
+          case 26: {
+            if (speakerSubtype_ == null) {
+              SpeakerSubtype = new global::Smarthome.SpeakerSubtype();
+            }
+            input.ReadMessage(SpeakerSubtype);
             break;
           }
         }
@@ -2324,6 +2398,1744 @@ namespace Smarthome {
           }
           case 16: {
             Success = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class SpeakerRequest : pb::IMessage<SpeakerRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<SpeakerRequest> _parser = new pb::MessageParser<SpeakerRequest>(() => new SpeakerRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<SpeakerRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Smarthome.SmarthomeReflection.Descriptor.MessageTypes[11]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SpeakerRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SpeakerRequest(SpeakerRequest other) : this() {
+      id_ = other.id_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SpeakerRequest Clone() {
+      return new SpeakerRequest(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private string id_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Id {
+      get { return id_; }
+      set {
+        id_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as SpeakerRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(SpeakerRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id.Length != 0) hash ^= Id.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Id.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Id);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Id.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Id);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(SpeakerRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id.Length != 0) {
+        Id = other.Id;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Id = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Id = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class SpeakerVolumeResponse : pb::IMessage<SpeakerVolumeResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<SpeakerVolumeResponse> _parser = new pb::MessageParser<SpeakerVolumeResponse>(() => new SpeakerVolumeResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<SpeakerVolumeResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Smarthome.SmarthomeReflection.Descriptor.MessageTypes[12]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SpeakerVolumeResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SpeakerVolumeResponse(SpeakerVolumeResponse other) : this() {
+      id_ = other.id_;
+      volume_ = other.volume_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SpeakerVolumeResponse Clone() {
+      return new SpeakerVolumeResponse(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private string id_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Id {
+      get { return id_; }
+      set {
+        id_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "volume" field.</summary>
+    public const int VolumeFieldNumber = 2;
+    private int volume_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Volume {
+      get { return volume_; }
+      set {
+        volume_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as SpeakerVolumeResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(SpeakerVolumeResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (Volume != other.Volume) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id.Length != 0) hash ^= Id.GetHashCode();
+      if (Volume != 0) hash ^= Volume.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Id.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Id);
+      }
+      if (Volume != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Volume);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Id.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Id);
+      }
+      if (Volume != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Volume);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+      }
+      if (Volume != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Volume);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(SpeakerVolumeResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id.Length != 0) {
+        Id = other.Id;
+      }
+      if (other.Volume != 0) {
+        Volume = other.Volume;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Id = input.ReadString();
+            break;
+          }
+          case 16: {
+            Volume = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Id = input.ReadString();
+            break;
+          }
+          case 16: {
+            Volume = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class SpeakerVolumeRequest : pb::IMessage<SpeakerVolumeRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<SpeakerVolumeRequest> _parser = new pb::MessageParser<SpeakerVolumeRequest>(() => new SpeakerVolumeRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<SpeakerVolumeRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Smarthome.SmarthomeReflection.Descriptor.MessageTypes[13]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SpeakerVolumeRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SpeakerVolumeRequest(SpeakerVolumeRequest other) : this() {
+      id_ = other.id_;
+      volume_ = other.volume_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SpeakerVolumeRequest Clone() {
+      return new SpeakerVolumeRequest(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private string id_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Id {
+      get { return id_; }
+      set {
+        id_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "volume" field.</summary>
+    public const int VolumeFieldNumber = 2;
+    private int volume_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Volume {
+      get { return volume_; }
+      set {
+        volume_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as SpeakerVolumeRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(SpeakerVolumeRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (Volume != other.Volume) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id.Length != 0) hash ^= Id.GetHashCode();
+      if (Volume != 0) hash ^= Volume.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Id.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Id);
+      }
+      if (Volume != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Volume);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Id.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Id);
+      }
+      if (Volume != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Volume);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+      }
+      if (Volume != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Volume);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(SpeakerVolumeRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id.Length != 0) {
+        Id = other.Id;
+      }
+      if (other.Volume != 0) {
+        Volume = other.Volume;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Id = input.ReadString();
+            break;
+          }
+          case 16: {
+            Volume = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Id = input.ReadString();
+            break;
+          }
+          case 16: {
+            Volume = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class AudioStatusResponse : pb::IMessage<AudioStatusResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<AudioStatusResponse> _parser = new pb::MessageParser<AudioStatusResponse>(() => new AudioStatusResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<AudioStatusResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Smarthome.SmarthomeReflection.Descriptor.MessageTypes[14]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AudioStatusResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AudioStatusResponse(AudioStatusResponse other) : this() {
+      id_ = other.id_;
+      playing_ = other.playing_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AudioStatusResponse Clone() {
+      return new AudioStatusResponse(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private string id_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Id {
+      get { return id_; }
+      set {
+        id_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "playing" field.</summary>
+    public const int PlayingFieldNumber = 2;
+    private bool playing_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Playing {
+      get { return playing_; }
+      set {
+        playing_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as AudioStatusResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(AudioStatusResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (Playing != other.Playing) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id.Length != 0) hash ^= Id.GetHashCode();
+      if (Playing != false) hash ^= Playing.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Id.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Id);
+      }
+      if (Playing != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(Playing);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Id.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Id);
+      }
+      if (Playing != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(Playing);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+      }
+      if (Playing != false) {
+        size += 1 + 1;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(AudioStatusResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id.Length != 0) {
+        Id = other.Id;
+      }
+      if (other.Playing != false) {
+        Playing = other.Playing;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Id = input.ReadString();
+            break;
+          }
+          case 16: {
+            Playing = input.ReadBool();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Id = input.ReadString();
+            break;
+          }
+          case 16: {
+            Playing = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// Smart speaker subtypes
+  /// </summary>
+  public sealed partial class SpeakerSubtype : pb::IMessage<SpeakerSubtype>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<SpeakerSubtype> _parser = new pb::MessageParser<SpeakerSubtype>(() => new SpeakerSubtype());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<SpeakerSubtype> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Smarthome.SmarthomeReflection.Descriptor.MessageTypes[15]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SpeakerSubtype() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SpeakerSubtype(SpeakerSubtype other) : this() {
+      switch (other.SubtypeCase) {
+        case SubtypeOneofCase.Basic:
+          Basic = other.Basic.Clone();
+          break;
+        case SubtypeOneofCase.Bluetooth:
+          Bluetooth = other.Bluetooth.Clone();
+          break;
+        case SubtypeOneofCase.Wifi:
+          Wifi = other.Wifi.Clone();
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SpeakerSubtype Clone() {
+      return new SpeakerSubtype(this);
+    }
+
+    /// <summary>Field number for the "basic" field.</summary>
+    public const int BasicFieldNumber = 1;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Smarthome.BasicSpeaker Basic {
+      get { return subtypeCase_ == SubtypeOneofCase.Basic ? (global::Smarthome.BasicSpeaker) subtype_ : null; }
+      set {
+        subtype_ = value;
+        subtypeCase_ = value == null ? SubtypeOneofCase.None : SubtypeOneofCase.Basic;
+      }
+    }
+
+    /// <summary>Field number for the "bluetooth" field.</summary>
+    public const int BluetoothFieldNumber = 2;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Smarthome.BluetoothSpeaker Bluetooth {
+      get { return subtypeCase_ == SubtypeOneofCase.Bluetooth ? (global::Smarthome.BluetoothSpeaker) subtype_ : null; }
+      set {
+        subtype_ = value;
+        subtypeCase_ = value == null ? SubtypeOneofCase.None : SubtypeOneofCase.Bluetooth;
+      }
+    }
+
+    /// <summary>Field number for the "wifi" field.</summary>
+    public const int WifiFieldNumber = 3;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Smarthome.WiFiSpeaker Wifi {
+      get { return subtypeCase_ == SubtypeOneofCase.Wifi ? (global::Smarthome.WiFiSpeaker) subtype_ : null; }
+      set {
+        subtype_ = value;
+        subtypeCase_ = value == null ? SubtypeOneofCase.None : SubtypeOneofCase.Wifi;
+      }
+    }
+
+    private object subtype_;
+    /// <summary>Enum of possible cases for the "subtype" oneof.</summary>
+    public enum SubtypeOneofCase {
+      None = 0,
+      Basic = 1,
+      Bluetooth = 2,
+      Wifi = 3,
+    }
+    private SubtypeOneofCase subtypeCase_ = SubtypeOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SubtypeOneofCase SubtypeCase {
+      get { return subtypeCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearSubtype() {
+      subtypeCase_ = SubtypeOneofCase.None;
+      subtype_ = null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as SpeakerSubtype);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(SpeakerSubtype other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Basic, other.Basic)) return false;
+      if (!object.Equals(Bluetooth, other.Bluetooth)) return false;
+      if (!object.Equals(Wifi, other.Wifi)) return false;
+      if (SubtypeCase != other.SubtypeCase) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (subtypeCase_ == SubtypeOneofCase.Basic) hash ^= Basic.GetHashCode();
+      if (subtypeCase_ == SubtypeOneofCase.Bluetooth) hash ^= Bluetooth.GetHashCode();
+      if (subtypeCase_ == SubtypeOneofCase.Wifi) hash ^= Wifi.GetHashCode();
+      hash ^= (int) subtypeCase_;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (subtypeCase_ == SubtypeOneofCase.Basic) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Basic);
+      }
+      if (subtypeCase_ == SubtypeOneofCase.Bluetooth) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Bluetooth);
+      }
+      if (subtypeCase_ == SubtypeOneofCase.Wifi) {
+        output.WriteRawTag(26);
+        output.WriteMessage(Wifi);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (subtypeCase_ == SubtypeOneofCase.Basic) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Basic);
+      }
+      if (subtypeCase_ == SubtypeOneofCase.Bluetooth) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Bluetooth);
+      }
+      if (subtypeCase_ == SubtypeOneofCase.Wifi) {
+        output.WriteRawTag(26);
+        output.WriteMessage(Wifi);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (subtypeCase_ == SubtypeOneofCase.Basic) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Basic);
+      }
+      if (subtypeCase_ == SubtypeOneofCase.Bluetooth) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Bluetooth);
+      }
+      if (subtypeCase_ == SubtypeOneofCase.Wifi) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Wifi);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(SpeakerSubtype other) {
+      if (other == null) {
+        return;
+      }
+      switch (other.SubtypeCase) {
+        case SubtypeOneofCase.Basic:
+          if (Basic == null) {
+            Basic = new global::Smarthome.BasicSpeaker();
+          }
+          Basic.MergeFrom(other.Basic);
+          break;
+        case SubtypeOneofCase.Bluetooth:
+          if (Bluetooth == null) {
+            Bluetooth = new global::Smarthome.BluetoothSpeaker();
+          }
+          Bluetooth.MergeFrom(other.Bluetooth);
+          break;
+        case SubtypeOneofCase.Wifi:
+          if (Wifi == null) {
+            Wifi = new global::Smarthome.WiFiSpeaker();
+          }
+          Wifi.MergeFrom(other.Wifi);
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            global::Smarthome.BasicSpeaker subBuilder = new global::Smarthome.BasicSpeaker();
+            if (subtypeCase_ == SubtypeOneofCase.Basic) {
+              subBuilder.MergeFrom(Basic);
+            }
+            input.ReadMessage(subBuilder);
+            Basic = subBuilder;
+            break;
+          }
+          case 18: {
+            global::Smarthome.BluetoothSpeaker subBuilder = new global::Smarthome.BluetoothSpeaker();
+            if (subtypeCase_ == SubtypeOneofCase.Bluetooth) {
+              subBuilder.MergeFrom(Bluetooth);
+            }
+            input.ReadMessage(subBuilder);
+            Bluetooth = subBuilder;
+            break;
+          }
+          case 26: {
+            global::Smarthome.WiFiSpeaker subBuilder = new global::Smarthome.WiFiSpeaker();
+            if (subtypeCase_ == SubtypeOneofCase.Wifi) {
+              subBuilder.MergeFrom(Wifi);
+            }
+            input.ReadMessage(subBuilder);
+            Wifi = subBuilder;
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            global::Smarthome.BasicSpeaker subBuilder = new global::Smarthome.BasicSpeaker();
+            if (subtypeCase_ == SubtypeOneofCase.Basic) {
+              subBuilder.MergeFrom(Basic);
+            }
+            input.ReadMessage(subBuilder);
+            Basic = subBuilder;
+            break;
+          }
+          case 18: {
+            global::Smarthome.BluetoothSpeaker subBuilder = new global::Smarthome.BluetoothSpeaker();
+            if (subtypeCase_ == SubtypeOneofCase.Bluetooth) {
+              subBuilder.MergeFrom(Bluetooth);
+            }
+            input.ReadMessage(subBuilder);
+            Bluetooth = subBuilder;
+            break;
+          }
+          case 26: {
+            global::Smarthome.WiFiSpeaker subBuilder = new global::Smarthome.WiFiSpeaker();
+            if (subtypeCase_ == SubtypeOneofCase.Wifi) {
+              subBuilder.MergeFrom(Wifi);
+            }
+            input.ReadMessage(subBuilder);
+            Wifi = subBuilder;
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class BasicSpeaker : pb::IMessage<BasicSpeaker>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<BasicSpeaker> _parser = new pb::MessageParser<BasicSpeaker>(() => new BasicSpeaker());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<BasicSpeaker> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Smarthome.SmarthomeReflection.Descriptor.MessageTypes[16]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public BasicSpeaker() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public BasicSpeaker(BasicSpeaker other) : this() {
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public BasicSpeaker Clone() {
+      return new BasicSpeaker(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as BasicSpeaker);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(BasicSpeaker other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(BasicSpeaker other) {
+      if (other == null) {
+        return;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class BluetoothSpeaker : pb::IMessage<BluetoothSpeaker>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<BluetoothSpeaker> _parser = new pb::MessageParser<BluetoothSpeaker>(() => new BluetoothSpeaker());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<BluetoothSpeaker> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Smarthome.SmarthomeReflection.Descriptor.MessageTypes[17]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public BluetoothSpeaker() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public BluetoothSpeaker(BluetoothSpeaker other) : this() {
+      bluetoothAddress_ = other.bluetoothAddress_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public BluetoothSpeaker Clone() {
+      return new BluetoothSpeaker(this);
+    }
+
+    /// <summary>Field number for the "bluetoothAddress" field.</summary>
+    public const int BluetoothAddressFieldNumber = 1;
+    private string bluetoothAddress_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string BluetoothAddress {
+      get { return bluetoothAddress_; }
+      set {
+        bluetoothAddress_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as BluetoothSpeaker);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(BluetoothSpeaker other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (BluetoothAddress != other.BluetoothAddress) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (BluetoothAddress.Length != 0) hash ^= BluetoothAddress.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (BluetoothAddress.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(BluetoothAddress);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (BluetoothAddress.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(BluetoothAddress);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (BluetoothAddress.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(BluetoothAddress);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(BluetoothSpeaker other) {
+      if (other == null) {
+        return;
+      }
+      if (other.BluetoothAddress.Length != 0) {
+        BluetoothAddress = other.BluetoothAddress;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            BluetoothAddress = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            BluetoothAddress = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class WiFiSpeaker : pb::IMessage<WiFiSpeaker>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<WiFiSpeaker> _parser = new pb::MessageParser<WiFiSpeaker>(() => new WiFiSpeaker());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<WiFiSpeaker> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Smarthome.SmarthomeReflection.Descriptor.MessageTypes[18]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public WiFiSpeaker() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public WiFiSpeaker(WiFiSpeaker other) : this() {
+      ipAddress_ = other.ipAddress_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public WiFiSpeaker Clone() {
+      return new WiFiSpeaker(this);
+    }
+
+    /// <summary>Field number for the "ipAddress" field.</summary>
+    public const int IpAddressFieldNumber = 1;
+    private string ipAddress_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string IpAddress {
+      get { return ipAddress_; }
+      set {
+        ipAddress_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as WiFiSpeaker);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(WiFiSpeaker other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (IpAddress != other.IpAddress) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (IpAddress.Length != 0) hash ^= IpAddress.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (IpAddress.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(IpAddress);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (IpAddress.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(IpAddress);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (IpAddress.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(IpAddress);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(WiFiSpeaker other) {
+      if (other == null) {
+        return;
+      }
+      if (other.IpAddress.Length != 0) {
+        IpAddress = other.IpAddress;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            IpAddress = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            IpAddress = input.ReadString();
             break;
           }
         }
