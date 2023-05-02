@@ -20,179 +20,6 @@ using _System = global::System;
 
 namespace Demo
 {
-    [global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704")]
-    [global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1707")]
-    [global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1709")]
-    [global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1710")]
-    [global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1711")]
-    [global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1715")]
-    [global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1716")]
-    [global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1720")]
-    [global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1722")]
-    [global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1724")]
-    [global::System.Serializable]
-    public partial class Image : global::System.ICloneable
-    {
-        #region Slice data members
-
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.7.9")]
-        public int width;
-
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.7.9")]
-        public int height;
-
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.7.9")]
-        public byte[] data;
-
-        #endregion
-
-        partial void ice_initialize();
-
-        #region Constructors
-
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.7.9")]
-        public Image()
-        {
-            ice_initialize();
-        }
-
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.7.9")]
-        public Image(int width, int height, byte[] data)
-        {
-            this.width = width;
-            this.height = height;
-            this.data = data;
-            ice_initialize();
-        }
-
-        #endregion
-
-        #region ICloneable members
-
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.7.9")]
-        public object Clone()
-        {
-            return MemberwiseClone();
-        }
-
-        #endregion
-
-        #region Object members
-
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.7.9")]
-        public override int GetHashCode()
-        {
-            int h_ = 5381;
-            global::IceInternal.HashUtil.hashAdd(ref h_, "::Demo::Image");
-            global::IceInternal.HashUtil.hashAdd(ref h_, width);
-            global::IceInternal.HashUtil.hashAdd(ref h_, height);
-            global::IceInternal.HashUtil.hashAdd(ref h_, data);
-            return h_;
-        }
-
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.7.9")]
-        public override bool Equals(object other)
-        {
-            if(object.ReferenceEquals(this, other))
-            {
-                return true;
-            }
-            if(other == null)
-            {
-                return false;
-            }
-            if(GetType() != other.GetType())
-            {
-                return false;
-            }
-            Image o = (Image)other;
-            if(!this.width.Equals(o.width))
-            {
-                return false;
-            }
-            if(!this.height.Equals(o.height))
-            {
-                return false;
-            }
-            if(this.data == null)
-            {
-                if(o.data != null)
-                {
-                    return false;
-                }
-            }
-            else
-            {
-                if(!IceUtilInternal.Arrays.Equals(this.data, o.data))
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
-
-        #endregion
-
-        #region Comparison members
-
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.7.9")]
-        public static bool operator==(Image lhs, Image rhs)
-        {
-            return Equals(lhs, rhs);
-        }
-
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.7.9")]
-        public static bool operator!=(Image lhs, Image rhs)
-        {
-            return !Equals(lhs, rhs);
-        }
-
-        #endregion
-
-        #region Marshaling support
-
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.7.9")]
-        public void ice_writeMembers(global::Ice.OutputStream ostr)
-        {
-            ostr.writeInt(this.width);
-            ostr.writeInt(this.height);
-            ImageDataHelper.write(ostr, this.data);
-        }
-
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.7.9")]
-        public void ice_readMembers(global::Ice.InputStream istr)
-        {
-            this.width = istr.readInt();
-            this.height = istr.readInt();
-            this.data = ImageDataHelper.read(istr);
-        }
-
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.7.9")]
-        public static void ice_write(global::Ice.OutputStream ostr, Image v)
-        {
-            if(v == null)
-            {
-                _nullMarshalValue.ice_writeMembers(ostr);
-            }
-            else
-            {
-                v.ice_writeMembers(ostr);
-            }
-        }
-
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.7.9")]
-        public static Image ice_read(global::Ice.InputStream istr)
-        {
-            var v = new Image();
-            v.ice_readMembers(istr);
-            return v;
-        }
-
-        private static readonly Image _nullMarshalValue = new Image();
-
-        #endregion
-    }
-
     [global::System.Runtime.InteropServices.ComVisible(false)]
     [global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704")]
     [global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1707")]
@@ -218,7 +45,7 @@ namespace Demo
     public delegate void Callback_Operations_operationWithArgs(string ret);
 
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.7.9")]
-    public delegate void Callback_Operations_processData(Image ret);
+    public delegate void Callback_Operations_processData(byte[] ret);
 }
 
 namespace Demo
@@ -250,17 +77,17 @@ namespace Demo
 
         string end_operationWithArgs(global::Ice.AsyncResult asyncResult);
 
-        Image processData(Image data, global::Ice.OptionalContext context = new global::Ice.OptionalContext());
+        byte[] processData(byte[] data, global::Ice.OptionalContext context = new global::Ice.OptionalContext());
 
-        global::System.Threading.Tasks.Task<Image> processDataAsync(Image data, global::Ice.OptionalContext context = new global::Ice.OptionalContext(), global::System.IProgress<bool> progress = null, global::System.Threading.CancellationToken cancel = new global::System.Threading.CancellationToken());
+        global::System.Threading.Tasks.Task<byte[]> processDataAsync(byte[] data, global::Ice.OptionalContext context = new global::Ice.OptionalContext(), global::System.IProgress<bool> progress = null, global::System.Threading.CancellationToken cancel = new global::System.Threading.CancellationToken());
 
-        global::Ice.AsyncResult<Callback_Operations_processData> begin_processData(Image data, global::Ice.OptionalContext context = new global::Ice.OptionalContext());
+        global::Ice.AsyncResult<Callback_Operations_processData> begin_processData(byte[] data, global::Ice.OptionalContext context = new global::Ice.OptionalContext());
 
-        global::Ice.AsyncResult begin_processData(Image data, global::Ice.AsyncCallback callback, object cookie);
+        global::Ice.AsyncResult begin_processData(byte[] data, global::Ice.AsyncCallback callback, object cookie);
 
-        global::Ice.AsyncResult begin_processData(Image data, global::Ice.OptionalContext context, global::Ice.AsyncCallback callback, object cookie);
+        global::Ice.AsyncResult begin_processData(byte[] data, global::Ice.OptionalContext context, global::Ice.AsyncCallback callback, object cookie);
 
-        Image end_processData(global::Ice.AsyncResult asyncResult);
+        byte[] end_processData(global::Ice.AsyncResult asyncResult);
     }
 }
 
@@ -276,14 +103,14 @@ namespace Demo
         string operationWithArgs(string arg1, int arg2, global::Ice.Current current = null);
 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.7.9")]
-        Image processData(Image data, global::Ice.Current current = null);
+        byte[] processData(byte[] data, global::Ice.Current current = null);
     }
 }
 
 namespace Demo
 {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("slice2cs", "3.7.9")]
-    public sealed class ImageDataHelper
+    public sealed class ComplexDataHelper
     {
         public static void write(global::Ice.OutputStream ostr, byte[] v)
         {
@@ -337,7 +164,7 @@ namespace Demo
             }
         }
 
-        public Image processData(Image data, global::Ice.OptionalContext context = new global::Ice.OptionalContext())
+        public byte[] processData(byte[] data, global::Ice.OptionalContext context = new global::Ice.OptionalContext())
         {
             try
             {
@@ -415,24 +242,24 @@ namespace Demo
                 });
         }
 
-        public global::System.Threading.Tasks.Task<Image> processDataAsync(Image data, global::Ice.OptionalContext context = new global::Ice.OptionalContext(), global::System.IProgress<bool> progress = null, global::System.Threading.CancellationToken cancel = new global::System.Threading.CancellationToken())
+        public global::System.Threading.Tasks.Task<byte[]> processDataAsync(byte[] data, global::Ice.OptionalContext context = new global::Ice.OptionalContext(), global::System.IProgress<bool> progress = null, global::System.Threading.CancellationToken cancel = new global::System.Threading.CancellationToken())
         {
             return _iceI_processDataAsync(data, context, progress, cancel, false);
         }
 
-        private global::System.Threading.Tasks.Task<Image> _iceI_processDataAsync(Image iceP_data, global::Ice.OptionalContext context, global::System.IProgress<bool> progress, global::System.Threading.CancellationToken cancel, bool synchronous)
+        private global::System.Threading.Tasks.Task<byte[]> _iceI_processDataAsync(byte[] iceP_data, global::Ice.OptionalContext context, global::System.IProgress<bool> progress, global::System.Threading.CancellationToken cancel, bool synchronous)
         {
             iceCheckTwowayOnly(_processData_name);
-            var completed = new global::IceInternal.OperationTaskCompletionCallback<Image>(progress, cancel);
+            var completed = new global::IceInternal.OperationTaskCompletionCallback<byte[]>(progress, cancel);
             _iceI_processData(iceP_data, context, synchronous, completed);
             return completed.Task;
         }
 
         private const string _processData_name = "processData";
 
-        private void _iceI_processData(Image iceP_data, global::System.Collections.Generic.Dictionary<string, string> context, bool synchronous, global::IceInternal.OutgoingAsyncCompletionCallback completed)
+        private void _iceI_processData(byte[] iceP_data, global::System.Collections.Generic.Dictionary<string, string> context, bool synchronous, global::IceInternal.OutgoingAsyncCompletionCallback completed)
         {
-            var outAsync = getOutgoingAsync<Image>(completed);
+            var outAsync = getOutgoingAsync<byte[]>(completed);
             outAsync.invoke(
                 _processData_name,
                 global::Ice.OperationMode.Normal,
@@ -441,12 +268,12 @@ namespace Demo
                 synchronous,
                 write: (global::Ice.OutputStream ostr) =>
                 {
-                    Image.ice_write(ostr, iceP_data);
+                    ComplexDataHelper.write(ostr, iceP_data);
                 },
                 read: (global::Ice.InputStream istr) =>
                 {
-                    Image ret = null;
-                    ret = Image.ice_read(istr);
+                    byte[] ret;
+                    ret = ComplexDataHelper.read(istr);
                     return ret;
                 });
         }
@@ -529,33 +356,33 @@ namespace Demo
             return completed;
         }
 
-        public global::Ice.AsyncResult<Callback_Operations_processData> begin_processData(Image data, global::Ice.OptionalContext context = new global::Ice.OptionalContext())
+        public global::Ice.AsyncResult<Callback_Operations_processData> begin_processData(byte[] data, global::Ice.OptionalContext context = new global::Ice.OptionalContext())
         {
             return begin_processData(data, context, null, null, false);
         }
 
-        public global::Ice.AsyncResult begin_processData(Image data, global::Ice.AsyncCallback callback, object cookie)
+        public global::Ice.AsyncResult begin_processData(byte[] data, global::Ice.AsyncCallback callback, object cookie)
         {
             return begin_processData(data, new global::Ice.OptionalContext(), callback, cookie, false);
         }
 
-        public global::Ice.AsyncResult begin_processData(Image data, global::Ice.OptionalContext context, global::Ice.AsyncCallback callback, object cookie)
+        public global::Ice.AsyncResult begin_processData(byte[] data, global::Ice.OptionalContext context, global::Ice.AsyncCallback callback, object cookie)
         {
             return begin_processData(data, context, callback, cookie, false);
         }
 
-        public Image end_processData(global::Ice.AsyncResult asyncResult)
+        public byte[] end_processData(global::Ice.AsyncResult asyncResult)
         {
             var resultI_ = global::IceInternal.AsyncResultI.check(asyncResult, this, _processData_name);
-            var outgoing_ = (global::IceInternal.OutgoingAsyncT<Image>)resultI_.OutgoingAsync;
+            var outgoing_ = (global::IceInternal.OutgoingAsyncT<byte[]>)resultI_.OutgoingAsync;
             return outgoing_.getResult(resultI_.wait());
         }
 
-        private global::Ice.AsyncResult<Callback_Operations_processData> begin_processData(Image iceP_data, global::System.Collections.Generic.Dictionary<string, string> context, global::Ice.AsyncCallback completedCallback, object cookie, bool synchronous)
+        private global::Ice.AsyncResult<Callback_Operations_processData> begin_processData(byte[] iceP_data, global::System.Collections.Generic.Dictionary<string, string> context, global::Ice.AsyncCallback completedCallback, object cookie, bool synchronous)
         {
             iceCheckAsyncTwowayOnly(_processData_name);
-            var completed = new global::IceInternal.OperationAsyncResultCompletionCallback<Callback_Operations_processData, Image>(
-                (Callback_Operations_processData cb, Image ret) =>
+            var completed = new global::IceInternal.OperationAsyncResultCompletionCallback<Callback_Operations_processData, byte[]>(
+                (Callback_Operations_processData cb, byte[] ret) =>
                 {
                     if(cb != null)
                     {
@@ -723,7 +550,7 @@ namespace Demo
 
         public abstract string operationWithArgs(string arg1, int arg2, global::Ice.Current current = null);
 
-        public abstract Image processData(Image data, global::Ice.Current current = null);
+        public abstract byte[] processData(byte[] data, global::Ice.Current current = null);
 
         #endregion
 
@@ -793,13 +620,12 @@ namespace Demo
         {
             global::Ice.ObjectImpl.iceCheckMode(global::Ice.OperationMode.Normal, current.mode);
             var istr = inS.startReadParams();
-            Image iceP_data;
-            iceP_data = null;
-            iceP_data = Image.ice_read(istr);
+            byte[] iceP_data;
+            iceP_data = ComplexDataHelper.read(istr);
             inS.endReadParams();
             var ret = obj.processData(iceP_data, current);
             var ostr = inS.startWriteParams();
-            Image.ice_write(ostr, ret);
+            ComplexDataHelper.write(ostr, ret);
             inS.endWriteParams(ostr);
             return inS.setResult(ostr);
         }

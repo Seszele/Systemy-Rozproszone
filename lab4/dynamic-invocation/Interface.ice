@@ -1,9 +1,15 @@
 module Demo {
-    sequence<byte> ComplexData;
+    sequence<byte> ImageData;
+
+    struct Image{
+        int width;
+        int height;
+        ImageData data;
+    };
 
     interface Operations {
         void simpleOperation();
         string operationWithArgs(string arg1, int arg2);
-        ComplexData processData(ComplexData data);
+        Image processData(Image data);
     };
 };

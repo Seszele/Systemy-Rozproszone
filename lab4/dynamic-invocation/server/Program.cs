@@ -8,7 +8,7 @@ public class OperationsImpl : OperationsDisp_
 
     public override string operationWithArgs(string arg1, int arg2, Current current) => $"Received: {arg1} and {arg2}";
 
-    public override byte[] processData(byte[] data, Current current) => data;
+    public override Image processData(Image data, Current current) => data;
 }
 
 public static class Program

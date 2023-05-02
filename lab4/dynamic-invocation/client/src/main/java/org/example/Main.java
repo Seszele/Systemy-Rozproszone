@@ -2,6 +2,7 @@ package org.example;
 
 import com.zeroc.Ice.*;
 import com.zeroc.Ice.Object;
+
 public class Main {
 
     private ObjectPrx proxy;
@@ -34,10 +35,12 @@ public class Main {
         return returnValue;
     }
 
-    public byte[] processData(byte[] data) {
+    public Image processData(Image image) {
         OutputStream out = new OutputStream(proxy.ice_getCommunicator());
         out.startEncapsulation();
-        out.writeByteSeq(data);
+        out.writeInt(image.width);
+        out.writeInt(image.height);
+        out.writeByteSeq(image.data);
         out.endEncapsulation();
 
         byte[] outParams = out.finished();
@@ -46,12 +49,16 @@ public class Main {
 
         InputStream in = new InputStream(proxy.ice_getCommunicator(), inParams.outParams);
         in.startEncapsulation();
-        int size = in.readAndCheckSeqSize(1);
-        byte[] returnValue = in.readBlob(size);
+        int width = in.readInt();
+        int height = in.readInt();
+        byte[] data = in.readByteSeq();
         in.endEncapsulation();
 
-        return returnValue;
+        Image result = new Image(width,height,data);
+        return result;
     }
+
+
 
 
     public static void main(String[] args) {
@@ -61,10 +68,10 @@ public class Main {
 
             client.simpleOperation();
             String result1 = client.operationWithArgs("hello", 123);
-            byte[] result2 = client.processData("some data".getBytes());
+            Image result2 = client.processData(new Image(12,32,"www://".getBytes()));
 
             System.out.println(result1);
-            System.out.println(new String(result2));
+            System.out.println(result2);
 
             communicator.waitForShutdown();
         }
