@@ -19,7 +19,7 @@ builder.Services.AddCors(options =>
                 .AllowAnyHeader();
         });
 });
-builder.Services.AddSingleton<CameraService>();
+// builder.Services.AddSingleton<CameraService>();
 builder.Services.AddSingleton<SmartSpeakerService>();
 var app = builder.Build();
 

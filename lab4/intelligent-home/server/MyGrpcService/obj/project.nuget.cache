@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "vtNQZrao/gQbQhWUtG3+g9e2RHpAOke48Z9TAzKFQwTbOqUIDvwQAKfVdHR3FcDKu20BJSVgVkE+8y+gCvoOZg==",
+  "dgSpecHash": "qJIy7YHyhxVT0eAD5OHsb9m5JOtCYhIV5cZnfErUReqSKDtgItlb5Mz0cBsdZQnkZzA5ZR4LhlZBX0Y0yg1QqA==",
   "success": true,
   "projectFilePath": "C:\\Studia\\Rozprochy\\Systemy-Rozproszone\\lab4\\intelligent-home\\server\\MyGrpcService\\MyGrpcService.csproj",
   "expectedPackageFiles": [
