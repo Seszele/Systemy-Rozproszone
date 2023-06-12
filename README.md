@@ -4,3 +4,5 @@
 [Gniazda TCP/UDP](lab1)
 
 [RESTful services](lab2/RecipeAPI) 
+
+[RabbitMQ](lab5/SpaceAgency)
