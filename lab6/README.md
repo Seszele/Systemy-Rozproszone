@@ -13,8 +13,8 @@ This is a Python-based application that interacts with a Zookeeper instance. Whe
 Clone the repository:
 
 ```bash
-git clone https://github.com/Seszele/zookeeper-watcher.git
-cd zookeeper-watcher
+git clone https://github.com/Seszele/Systemy-Rozproszone.git
+cd .\Systemy-Rozproszone\lab6\
 ```
 
 Install the dependencies:
