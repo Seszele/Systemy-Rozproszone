@@ -6,3 +6,5 @@
 [RESTful services](lab2/RecipeAPI) 
 
 [RabbitMQ](lab5/SpaceAgency)
+
+[Zookeeper](lab6)
